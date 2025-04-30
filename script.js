@@ -35,6 +35,10 @@ function displayItems(data) {
         img.alt = item.name;
         img.addEventListener("mouseover", () => showDescription(item));
         img.addEventListener("click", () => openModal(item));
+
+        img.style.width = '57px';
+        img.style.height = '57px';
+        
         itemList.appendChild(img);
     });
 
