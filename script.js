@@ -1,12 +1,11 @@
 const spellsData = [
-    { id: 1, name: "Огненный шар", description: "Описание огненного шара", image: "img/spells/Fireball.png" },
-    { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png" },
+    { id: 1, name: "Огненный шар", description: "Описание огненного шара", image: "img/spells/Fireball.png", level: "3" },
+    { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1" },
     // ... добавьте остальные заклинания
 ];
 
 const bestiaryData = [
-    { id: 1, name: "Гоблин", description: "Описание гоблина", image: "img/bestiary/goblin.png" },
-    { id: 2, name: "Дракон", description: "Описание дракона", image: "img/bestiary/dragon.png" },
+    { id: 1, name: "Гоблин", description: "Описание гоблина", image: "img/bestiary/goblin.png", danger: "0" },
     // ... добавьте остальных монстров
 ];
 
@@ -37,13 +36,48 @@ function displayItems(data) {
         itemList.appendChild(img);
     });
 }
-
+const levelDangerLabel = document.getElementById("level-danger-label");
+const levelDangerValue = document.getElementById("level-danger-value");
 // Функция для отображения описания при наведении
 function showDescription(item) {
     descriptionTitle.textContent = item.name;
     descriptionText.textContent = item.description;
 }
 
+    if (currentData === spellsData) {
+        levelDangerLabel.textContent = "Уровень:";
+        levelDangerValue.textContent = item.level;
+    } else if (currentData === bestiaryData) {
+        levelDangerLabel.textContent = "Опасность:";
+        levelDangerValue.textContent = item.danger;
+    } else {
+        levelDangerLabel.textContent = "";
+        levelDangerValue.textContent = "";
+    }
+}
+
+function displayItems(data) {
+    itemList.innerHTML = ""; // Очищаем список
+    data.forEach(item => {
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+        img.addEventListener("mouseover", () => showDescription(item));
+        img.addEventListener("click", () => openModal(item));
+        itemList.appendChild(img);
+    });
+    //Отображаем первый элемент сразу после загрузки данных
+    if (data.length > 0) {
+        showDescription(data[0]);
+    }
+    else {
+        descriptionTitle.textContent = "";
+        descriptionText.textContent = "";
+        levelDangerLabel.textContent = "";
+        levelDangerValue.textContent = "";
+
+    }
+}
 // Функция для открытия модального окна
 function openModal(item) {
     modalTitle.textContent = item.name;
@@ -79,3 +113,11 @@ window.addEventListener("click", (event) => {  // Закрытие по клик
 
 // Инициализация: отображаем заклинания при загрузке страницы
 displayItems(currentData);
+
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredData = currentData.filter(item => {
+        return item.name.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm);
+    });
+    displayItems(filteredData);
+});
