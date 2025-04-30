@@ -1,5 +1,5 @@
 const spellsData = [
-    { id: 1, name: "Огненный шар", description: "Описание огненного шара", image: "img/spells/fireball.png" },
+    { id: 1, name: "Огненный шар", description: "Описание огненного шара", image: "img/spells/Fireball.png" },
     { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/ice-arrow.png" },
     // ... добавьте остальные заклинания
 ];
