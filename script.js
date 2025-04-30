@@ -54,7 +54,6 @@ function showDescription(item) {
         levelDangerLabel.textContent = "";
         levelDangerValue.textContent = "";
     }
-}
 
 function displayItems(data) {
     itemList.innerHTML = ""; // Очищаем список
