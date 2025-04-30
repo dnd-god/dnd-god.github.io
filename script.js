@@ -37,12 +37,24 @@ function displayItems(data) {
         img.addEventListener("click", () => openModal(item));
         itemList.appendChild(img);
     });
+
+        //Отображаем первый элемент сразу после загрузки данных
+        if (data.length > 0) {
+            showDescription(data[0]);
+        }
+        else {
+            descriptionTitle.textContent = "";
+            descriptionText.textContent = "";
+            levelDangerLabel.textContent = "";
+            levelDangerValue.textContent = "";
+
+        }
 }
+
 // Функция для отображения описания при наведении
 function showDescription(item) {
     descriptionTitle.textContent = item.name;
     descriptionText.textContent = item.description;
-}
 
     if (currentData === spellsData) {
         levelDangerLabel.textContent = "Уровень:";
@@ -54,29 +66,8 @@ function showDescription(item) {
         levelDangerLabel.textContent = "";
         levelDangerValue.textContent = "";
     }
-
-function displayItems(data) {
-    itemList.innerHTML = ""; // Очищаем список
-    data.forEach(item => {
-        const img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.name;
-        img.addEventListener("mouseover", () => showDescription(item));
-        img.addEventListener("click", () => openModal(item));
-        itemList.appendChild(img);
-    });
-    //Отображаем первый элемент сразу после загрузки данных
-    if (data.length > 0) {
-        showDescription(data[0]);
-    }
-    else {
-        descriptionTitle.textContent = "";
-        descriptionText.textContent = "";
-        levelDangerLabel.textContent = "";
-        levelDangerValue.textContent = "";
-
-    }
 }
+
 // Функция для открытия модального окна
 function openModal(item) {
     modalTitle.textContent = item.name;
