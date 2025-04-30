@@ -18,6 +18,8 @@ const itemList = document.getElementById("item-list");
 const descriptionTitle = document.getElementById("description-title");
 const descriptionText = document.getElementById("description-text");
 const searchInput = document.getElementById("search-input");
+const levelDangerLabel = document.getElementById("level-danger-label");
+const levelDangerValue = document.getElementById("level-danger-value");
 const filterButton = document.getElementById("filter-button");
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
@@ -36,8 +38,6 @@ function displayItems(data) {
         itemList.appendChild(img);
     });
 }
-const levelDangerLabel = document.getElementById("level-danger-label");
-const levelDangerValue = document.getElementById("level-danger-value");
 // Функция для отображения описания при наведении
 function showDescription(item) {
     descriptionTitle.textContent = item.name;
