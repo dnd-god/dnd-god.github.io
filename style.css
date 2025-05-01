@@ -19,7 +19,6 @@ nav a {
 }
 
 main {
-    padding: 20px; /* Отступы для всего контента */
 }
 
 .container {
@@ -28,6 +27,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
     gap: 20px; /* Используем gap для отступов между элементами flex */
 }
 
