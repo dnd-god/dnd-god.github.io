@@ -10,12 +10,38 @@ header {
     background-color: #34495e;
     padding: 10px;
     text-align: center;
+    display: flex; /* Используем flex для выравнивания */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+header h1 {
+    margin: 0; /* Убираем отступы заголовка */
+}
+
+nav {
+    margin-right: auto; /* Отталкиваем навигацию влево */
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
+}
+
+.header-controls { /* Стиль для блока управления */
+    display: flex;
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+.header-controls input {
+    width: 200px; /* Ширина поля поиска */
+    padding: 8px;
+    margin-right: 10px; /* Отступ между полем поиска и кнопкой */
+}
+
+.header-controls button {
+    padding: 8px;
 }
 
 main {
