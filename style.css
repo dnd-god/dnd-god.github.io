@@ -27,6 +27,7 @@ nav a {
     width: 20%;
     margin-right: 20px;
     background-color: #f0f0f0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .list {
