@@ -87,7 +87,6 @@ main {
 .list img {
     width: 100%;
     cursor: pointer;
-    border: 1px solid #555;
 }
 
 .list img:hover {
