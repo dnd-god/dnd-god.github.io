@@ -24,10 +24,22 @@ nav a {
 }
 
 .description {
-    width: 20%;
-    margin-right: 20px;
-    background-color: #f0f0f0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #2c3e50; /* Темно-синий */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.description h2,
+.description #level-or-danger,
+.description p {
+    margin: 0; /* Убираем внешние отступы для внутренних элементов */
+    padding: 0; /* Убираем внутренние отступы для внутренних элементов */
+    padding-left: 10px; /* Добавляем отступ слева для текста */
+    padding-top: 5px; /* Добавляем небольшой верхний отступ для читабельности*/
+}
+
+#level-or-danger {
+    padding-bottom: 5px; /* Добавляем небольшой нижний отступ для читабельности */
 }
 
 .list {
