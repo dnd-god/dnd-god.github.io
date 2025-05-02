@@ -51,7 +51,7 @@ main {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
+    max-width: none;
 }
 
 .description {
@@ -78,7 +78,7 @@ main {
 
 .list {
     flex-grow: 1;
-    width: 60%;
+    width: 100%;
     display: flex; /* Заменяем grid на flex */
     flex-wrap: wrap; /* Разрешаем перенос на новую строку */
     gap: 5px; /* Устанавливаем отступ между элементами */
