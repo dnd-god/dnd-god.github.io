@@ -1,18 +1,18 @@
 const spellsData = [
-    { id: 1, name: "Огненный шар", description: "Яркий луч вылетает из вашего указательного пальца в точку, выбранную вами в пределах дистанции, где и происходит взрыв пламени с гулким ревом. Все существа в пределах сферы с радиусом 20 футов с центром в этой точке должны совершить спасбросок Ловкости. Цель получает 8к6 урона огнём при провале или половину этого урона при успехе. Этот огонь огибает углы. Он воспламеняет горючие предметы, которые никто не несет и не носит.", image: "img/spells/Fireball.png", level: "3" },
-    { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1" },
-    { id: 3, name: "Кислотная стрела", description: "Описание кислотной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2" },
-    { id: 4, name: "Щит", description: "Описание щита", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1" },
-    { id: 5, name: "Луч холода", description: "Описание луча холода", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0" },
-    { id: 6, name: "Магическая рука", description: "Описание магической руки", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0" },
-    { id: 7, name: "Невидимость", description: "Описание невидимости", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2" },
-    { id: 8, name: "Иллюзорный двойник", description: "Описание иллюзорного двойника", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3" },
-    { id: 9, name: "Гроза", description: "Описание грозы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
-    { id: 10, name: "Стена огня", description: "Описание стены огня", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
-    { id: 11, name: "Изгнание", description: "Описание изгнания", image: "img/spells/Arrow_of_Ice_Faded.png", level: "5" },
-    { id: 12, name: "Замедление", description: "Описание замедления", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3" },
-    { id: 13, name: "Превращение", description: "Описание превращения", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
-    { id: 14, name: "Остановка времени", description: "Описание остановки времени", image: "img/spells/Arrow_of_Ice_Faded.png", level: "9" }
+    { id: 1, name: "Огненный шар", description: "Яркий луч вылетает из вашего указательного пальца в точку, выбранную вами в пределах дистанции, где и происходит взрыв пламени с гулким ревом. Все существа в пределах сферы с радиусом 20 футов с центром в этой точке должны совершить спасбросок Ловкости. Цель получает 8к6 урона огнём при провале или половину этого урона при успехе. Этот огонь огибает углы. Он воспламеняет горючие предметы, которые никто не несет и не носит.", image: "img/spells/Fireball.png", level: "3", school: "Воплощение", components: "В, С, М (шарик из сухой серы)" },
+    { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1", school: "Воплощение", components: "В, С" },
+    { id: 3, name: "Кислотная стрела", description: "Описание кислотной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2", school: "Преобразование", components: "В, С, М (порошок, обернутый в лист)" },
+    { id: 4, name: "Щит", description: "Описание щита", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1", school: "Ограждение", components: "В, С" },
+    { id: 5, name: "Луч холода", description: "Описание луча холода", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0", school: "Воплощение", components: "В, С" },
+    { id: 6, name: "Магическая рука", description: "Описание магической руки", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0", school: "Преобразование", components: "В, С" },
+    { id: 7, name: "Невидимость", description: "Описание невидимости", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2", school: "Иллюзия", components: "В, С, М (ресница, покрытая смолой)" },
+    { id: 8, name: "Иллюзорный двойник", description: "Описание иллюзорного двойника", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3", school: "Иллюзия", components: "В, С, М (немного шерсти)" },
+    { id: 9, name: "Гроза", description: "Описание грозы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4", school: "Воплощение", components: "В, С, М (капля воды)" },
+    { id: 10, name: "Стена огня", description: "Описание стены огня", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4", school: "Воплощение", components: "В, С, М (красный камень)" },
+    { id: 11, name: "Изгнание", description: "Описание изгнания", image: "img/spells/Arrow_of_Ice_Faded.png", level: "5", school: "Ограждение", components: "В, С, М (священный символ)" },
+    { id: 12, name: "Замедление", description: "Описание замедления", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3", school: "Преобразование", components: "В, С, М (кристалл, песок, капля воды)" },
+    { id: 13, name: "Превращение", description: "Описание превращения", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4", school: "Преобразование", components: "В, С, М (гусеница)" },
+    { id: 14, name: "Остановка времени", description: "Описание остановки времени", image: "img/spells/Arrow_of_Ice_Faded.png", level: "9", school: "Преобразование", components: "В" }
 ];
 
 const bestiaryData = [
@@ -122,13 +122,24 @@ function displaySpellLevel(level, spells) {
 function showDescription(item) {
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title-container");
+
     const levelSpan = document.createElement("span");
     levelSpan.textContent = "Уровень: " + item.level;
     levelSpan.classList.add("level-span");
     titleContainer.appendChild(levelSpan);
+
     descriptionTitle.textContent = item.name;
     descriptionTitle.classList.add("centered-title");
     titleContainer.appendChild(descriptionTitle);
+
+    const schoolText = document.createElement("p");
+    schoolText.textContent = "Школа: " + item.school;
+    titleContainer.appendChild(schoolText);
+
+    const componentsText = document.createElement("p");
+    componentsText.textContent = "Компоненты: " + item.components;
+    titleContainer.appendChild(componentsText);
+
     const aside = document.querySelector(".description");
     aside.innerHTML = ""; // Очищаем все содержимое
     aside.appendChild(titleContainer); // Добавляем контейнер с заголовком и уровнем
@@ -150,7 +161,13 @@ function showDescription(item) {
 // Функция для открытия модального окна
 function openModal(item) {
     modalTitle.textContent = item.name;
-    modalDescription.textContent = item.description;
+
+    // Создаем текст для модального окна
+    let modalText = `<p><strong>Школа:</strong> ${item.school}</p>`;
+    modalText += `<p><strong>Компоненты:</strong> ${item.components}</p>`;
+    modalText += `<p>${item.description}</p>`;
+
+    modalDescription.innerHTML = modalText; // Используем innerHTML для вставки HTML-кода
     modal.style.display = "block";
 }
 
