@@ -111,6 +111,7 @@ main {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
     z-index: 1; /* Отображается поверх всего */
+    overflow: auto; /* Добавляем прокрутку, если контент не помещается */
 }
 
 .modal-content {
@@ -118,10 +119,13 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #34495e; /* Фон модального окна */
     padding: 20px;
     border-radius: 5px;
-    color: #333;
+    color: #fff; /* Цвет текста в модальном окне */
+    width: 80%; /* Занимаемая ширина (можно настроить) */
+    max-width: 600px; /* Максимальная ширина (можно настроить) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для выделения */
 }
 
 .close-button {
@@ -129,13 +133,38 @@ main {
     top: 10px;
     right: 10px;
     cursor: pointer;
+    color: #fff; /* Цвет крестика */
+    font-size: 20px; /* Размер крестика */
 }
+
 
 /* Стили для заголовка "Заклинания" */
 .spells-title {
     text-align: center;
     width: 100%; /* Занимает всю ширину контейнера */
     margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.spell-details {
+    margin-bottom: 15px;
+}
+
+.spell-details p {
+    margin: 5px 0;
+}
+
+.spell-school {
+    font-style: italic;
+    color: #f1c40f; /* Желтый цвет, как на сайте */
+}
+
+.spell-components {
+    font-weight: bold;
+}
+
+.spell-description {
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 /* Стили для разделителя */
