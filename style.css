@@ -158,13 +158,13 @@ main {
 .centered-title {
     text-align: center;
     position: relative; /*  Чтобы позиционировать уровень абсолютно относительно заголовка */
-    padding-top: 10px; /*  Чтобы заголовок не налезал на уровень */
+    padding-top: 25px; /*  Чтобы заголовок не налезал на уровень */
 }
 
 .level-span {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
     background-color: #f1c40f; /*  Желтый цвет */
     color: #2c3e50; /* Темный цвет текста для контраста */
     padding: 2px 5px;
