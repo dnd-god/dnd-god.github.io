@@ -120,17 +120,22 @@ function displaySpellLevel(level, spells) {
 
 // Функция для отображения описания при наведении
 function showDescription(item) {
+    const titleContainer = document.createElement("div");
+    titleContainer.classList.add("title-container");
+    const levelSpan = document.createElement("span");
+    levelSpan.textContent = "Уровень: " + item.level;
+    levelSpan.classList.add("level-span");
+    titleContainer.appendChild(levelSpan);
     descriptionTitle.textContent = item.name;
     descriptionTitle.classList.add("centered-title");
-    descriptionText.textContent = item.description;
+    titleContainer.appendChild(descriptionTitle);
+    const aside = document.querySelector(".description");
+    aside.innerHTML = ""; // Очищаем все содержимое
+    aside.appendChild(titleContainer); // Добавляем контейнер с заголовком и уровнем
 
     if (currentData === spellsData) {
-        levelDangerLabel.textContent = "Уровень:";
-        levelDangerValue.textContent = item.level;
-        const levelSpan = document.createElement("span");
-        levelSpan.textContent = "Уровень: " + item.level;
-        levelSpan.classList.add("level-span");
-        descriptionTitle.insertBefore(levelSpan, descriptionTitle.firstChild);
+        // levelDangerLabel.textContent = "Уровень:";
+        // levelDangerValue.textContent = item.level;
     } else if (currentData === bestiaryData) {
         levelDangerLabel.textContent = "Опасность:";
         levelDangerValue.textContent = item.danger;
@@ -139,6 +144,7 @@ function showDescription(item) {
         levelDangerValue.textContent = "";
     }
     descriptionText.textContent = item.description;
+    aside.appendChild(descriptionText) // Добавляем описание
 }
 
 // Функция для открытия модального окна
