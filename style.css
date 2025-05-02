@@ -79,13 +79,14 @@ main {
 .list {
     flex-grow: 1;
     width: 60%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 5px;
 }
 
 .list img {
-    width: 100%;
+    width: 57px;
+    height: 57px;
     cursor: pointer;
 }
 
