@@ -163,9 +163,11 @@ function openModal(item) {
     modalTitle.textContent = item.name;
 
     // Создаем текст для модального окна
-    let modalText = `<p><strong>Школа:</strong> ${item.school}</p>`;
-    modalText += `<p><strong>Компоненты:</strong> ${item.components}</p>`;
-    modalText += `<p>${item.description}</p>`;
+    let modalText = `<div class="spell-details">
+                         <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
+                         <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
+                         <p class="spell-description">${item.description}</p>
+                     </div>`;
 
     modalDescription.innerHTML = modalText; // Используем innerHTML для вставки HTML-кода
     modal.style.display = "block";
