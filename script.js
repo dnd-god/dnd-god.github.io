@@ -132,30 +132,52 @@ function showDescription(item) {
     descriptionTitle.classList.add("centered-title");
     titleContainer.appendChild(descriptionTitle);
 
-    const schoolText = document.createElement("p");
-    schoolText.textContent = "Школа: " + item.school;
-    titleContainer.appendChild(schoolText);
+    // Добавляем контейнер для иконок и компонентов
+    const spellInfoContainer = document.createElement("div");
+    spellInfoContainer.classList.add("spell-info-icons");
 
-    const componentsText = document.createElement("p");
-    componentsText.textContent = "Компоненты: " + item.components;
-    titleContainer.appendChild(componentsText);
+    // Символ школы (изображение)
+    const schoolImage = document.createElement("img");
+    schoolImage.classList.add("school-symbol");
+    schoolImage.src = getSchoolImage(item.school); // Функция для получения пути к изображению
+    schoolImage.alt = item.school; // Альтернативный текст для изображения
+    schoolImage.title = item.school; // Всплывающая подсказка
+    spellInfoContainer.appendChild(schoolImage);
+
+    // Компоненты
+    const components = item.components.toUpperCase(); // Преобразуем в верхний регистр
+    const componentsSpan = document.createElement("span");
+    componentsSpan.classList.add("components");
+    componentsSpan.innerHTML = formatComponents(components); // Функция для форматирования компонентов
+    spellInfoContainer.appendChild(componentsSpan);
+
+    titleContainer.appendChild(spellInfoContainer);
 
     const aside = document.querySelector(".description");
-    aside.innerHTML = ""; // Очищаем все содержимое
-    aside.appendChild(titleContainer); // Добавляем контейнер с заголовком и уровнем
+    aside.innerHTML = "";
+    aside.appendChild(titleContainer);
 
     if (currentData === spellsData) {
-        // levelDangerLabel.textContent = "Уровень:";
-        // levelDangerValue.textContent = item.level;
+        // ...
     } else if (currentData === bestiaryData) {
-        levelDangerLabel.textContent = "Опасность:";
-        levelDangerValue.textContent = item.danger;
+        // ...
     } else {
-        levelDangerLabel.textContent = "";
-        levelDangerValue.textContent = "";
+        // ...
     }
     descriptionText.textContent = item.description;
-    aside.appendChild(descriptionText) // Добавляем описание
+    aside.appendChild(descriptionText);
+}
+
+function getSchoolImage(school) {
+    return `img/schools/${school.toLowerCase()}.png`; // Путь к изображению
+}
+
+function formatComponents(components) {
+    let formatted = "";
+    formatted += components.includes("В") ? "В" : "В";
+    formatted += components.includes("С") ? "С" : "С";
+    formatted += components.includes("М") ? "М" : "М";
+    return formatted;
 }
 
 // Функция для открытия модального окна
