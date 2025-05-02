@@ -1,7 +1,18 @@
 const spellsData = [
     { id: 1, name: "Огненный шар", description: "Яркий луч вылетает из вашего указательного пальца в точку, выбранную вами в пределах дистанции, где и происходит взрыв пламени с гулким ревом. Все существа в пределах сферы с радиусом 20 футов с центром в этой точке должны совершить спасбросок Ловкости. Цель получает 8к6 урона огнём при провале или половину этого урона при успехе. Этот огонь огибает углы. Он воспламеняет горючие предметы, которые никто не несет и не носит.", image: "img/spells/Fireball.png", level: "3" },
     { id: 2, name: "Ледяная стрела", description: "Описание ледяной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1" },
-    // ... добавьте остальные заклинания
+    { id: 3, name: "Кислотная стрела", description: "Описание кислотной стрелы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2" },
+    { id: 4, name: "Щит", description: "Описание щита", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1" },
+    { id: 5, name: "Луч холода", description: "Описание луча холода", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0" },
+    { id: 6, name: "Магическая рука", description: "Описание магической руки", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0" },
+    { id: 7, name: "Невидимость", description: "Описание невидимости", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2" },
+    { id: 8, name: "Иллюзорный двойник", description: "Описание иллюзорного двойника", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3" },
+    { id: 9, name: "Гроза", description: "Описание грозы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
+    { id: 10, name: "Стена огня", description: "Описание стены огня", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
+    { id: 11, name: "Изгнание", description: "Описание изгнания", image: "img/spells/Arrow_of_Ice_Faded.png", level: "5" },
+    { id: 12, name: "Замедление", description: "Описание замедления", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3" },
+    { id: 13, name: "Превращение", description: "Описание превращения", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4" },
+    { id: 14, name: "Остановка времени", description: "Описание остановки времени", image: "img/spells/Arrow_of_Ice_Faded.png", level: "9" }
 ];
 
 const bestiaryData = [
@@ -29,7 +40,72 @@ const closeButton = document.querySelector(".close-button");
 // Функция для отображения элементов (заклинаний или бестиария)
 function displayItems(data) {
     itemList.innerHTML = ""; // Очищаем список
-    data.forEach(item => {
+
+    if (currentData === spellsData) {
+        // Отображаем заголовок "Заклинания"
+        const spellsTitle = document.createElement("h2");
+        spellsTitle.textContent = "Заклинания";
+        spellsTitle.classList.add("spells-title"); // Добавляем класс для стилизации
+        itemList.appendChild(spellsTitle);
+
+        // Сортируем заклинания: сначала заговоры, потом по уровню
+        const cantrips = data.filter(item => item.level === "0");
+        const leveledSpells = data.filter(item => item.level !== "0").sort((a, b) => parseInt(a.level) - parseInt(b.level));
+
+        // Отображаем заговоры
+        if (cantrips.length > 0) {
+            displaySpellLevel("Заговоры", cantrips);
+        }
+
+        // Отображаем заклинания по уровням
+        for (let i = 1; i <= 9; i++) {
+            const spellsOfLevel = leveledSpells.filter(item => item.level === i.toString());
+            if (spellsOfLevel.length > 0) {
+                displaySpellLevel(`Уровень ${i}`, spellsOfLevel);
+            }
+        }
+    } else {
+        // Отображение бестиария (без изменений)
+        data.forEach(item => {
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.name;
+            img.addEventListener("mouseover", () => showDescription(item));
+            img.addEventListener("click", () => openModal(item));
+
+            img.style.width = '57px';
+            img.style.height = '57px';
+            itemList.appendChild(img);
+        });
+    }
+
+    // Отображаем первый элемент сразу после загрузки данных
+    if (data.length > 0) {
+        showDescription(data[0]);
+    }
+    else {
+        descriptionTitle.textContent = "";
+        descriptionText.textContent = "";
+        levelDangerLabel.textContent = "";
+        levelDangerValue.textContent = "";
+
+    }
+}
+
+function displaySpellLevel(level, spells) {
+    // Создаем разделитель
+    const divider = document.createElement("hr");
+    divider.classList.add("spell-divider");
+    itemList.appendChild(divider);
+
+    // Создаем заголовок уровня
+    const levelTitle = document.createElement("h3");
+    levelTitle.textContent = level;
+    levelTitle.classList.add("level-title");
+    itemList.appendChild(levelTitle);
+
+    // Отображаем заклинания уровня
+    spells.forEach(item => {
         const img = document.createElement("img");
         img.src = item.image;
         img.alt = item.name;
@@ -38,21 +114,8 @@ function displayItems(data) {
 
         img.style.width = '57px';
         img.style.height = '57px';
-        
         itemList.appendChild(img);
     });
-
-        //Отображаем первый элемент сразу после загрузки данных
-        if (data.length > 0) {
-            showDescription(data[0]);
-        }
-        else {
-            descriptionTitle.textContent = "";
-            descriptionText.textContent = "";
-            levelDangerLabel.textContent = "";
-            levelDangerValue.textContent = "";
-
-        }
 }
 
 // Функция для отображения описания при наведении
