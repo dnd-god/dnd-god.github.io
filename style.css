@@ -209,3 +209,28 @@ main {
 #description-text {
     margin-top: 20px;
 }
+
+.spell-info-icons {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.school-symbol {
+    width: 20px; /*  Задаем ширину */
+    height: 20px; /*  Задаем высоту */
+    cursor: help; /* Изменяем курсор на вопросительный знак */
+    margin-right: 5px;
+    display: inline-block; /*  Чтобы работал margin */
+}
+
+.components {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+.components strong {
+    color: white; /* Выделяем активные компоненты */
+}
