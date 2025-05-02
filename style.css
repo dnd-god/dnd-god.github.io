@@ -79,19 +79,16 @@ main {
 .list {
     flex-grow: 1;
     width: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    display: flex; /* Заменяем grid на flex */
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+    gap: 5px; /* Устанавливаем отступ между элементами */
+    position: relative; /*  Для позиционирования заголовка */
 }
 
 .list img {
     width: 57px;
     height: 57px;
     cursor: pointer;
-}
-
-.list img:hover {
-    border-color: #fff;
 }
 
 .sidebar {
@@ -134,13 +131,27 @@ main {
     cursor: pointer;
 }
 
-#item-list {
-    font-size: 0; /* Убирает пробелы между строчными элементами */
+/* Стили для заголовка "Заклинания" */
+.spells-title {
+    text-align: center;
+    width: 100%; /* Занимает всю ширину контейнера */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
 }
 
-#item-list img {
-    display: inline-block; /* Преобразует в блочно-строчный элемент */
-    margin-right: 5px; /* Добавляет небольшой отступ справа */
-    margin-bottom: 5px; /* Добавляет небольшой отступ снизу */
-    font-size: initial; /* Возвращает нормальный размер шрифта для текста внутри иконок, если такой есть */
+/* Стили для разделителя */
+.spell-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid white;
+    margin: 10px 0;
+}
+
+/* Стили для заголовков уровней заклинаний */
+.level-title {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 5px;
+    top: 0;
+    transform: translateY(-100%); /* Поднимаем заголовок над разделителем */
 }
