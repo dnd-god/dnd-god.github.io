@@ -148,10 +148,9 @@ main {
 
 /* Стили для заголовков уровней заклинаний */
 .level-title {
-    position: absolute;
-    right: 0;
+    position: relative; /* Изменяем на relative */
+    text-align: right; /* Выравнивание текста по правому краю */
     margin: 0;
     padding: 5px;
-    top: 0;
-    transform: translateY(-100%); /* Поднимаем заголовок над разделителем */
+    width: 100%; /* Занимает всю ширину */
 }
