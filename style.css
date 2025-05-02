@@ -73,7 +73,7 @@ main {
 }
 
 #level-or-danger {
-    padding-bottom: 5px;
+    display: none;
 }
 
 .list {
@@ -153,4 +153,21 @@ main {
     margin: 0;
     padding: 5px;
     width: 100%; /* Занимает всю ширину */
+}
+
+.centered-title {
+    text-align: center;
+    position: relative; /*  Чтобы позиционировать уровень абсолютно относительно заголовка */
+    padding-top: 10px; /*  Чтобы заголовок не налезал на уровень */
+}
+
+.level-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f1c40f; /*  Желтый цвет */
+    color: #2c3e50; /* Темный цвет текста для контраста */
+    padding: 2px 5px;
+    border-radius: 3px; /*  Скругленные углы */
+    font-size: 0.8em; /*  Меньший размер шрифта */
 }
