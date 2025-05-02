@@ -157,8 +157,6 @@ main {
 
 .centered-title {
     text-align: center;
-    position: relative; /*  Чтобы позиционировать уровень абсолютно относительно заголовка */
-    padding-top: 25px; /*  Чтобы заголовок не налезал на уровень */
 }
 
 .level-span {
@@ -170,4 +168,13 @@ main {
     padding: 2px 5px;
     border-radius: 3px; /*  Скругленные углы */
     font-size: 0.8em; /*  Меньший размер шрифта */
+}
+
+.title-container {
+    position: relative; /*  Чтобы уровень абсолютно позиционировался относительно контейнера */
+    margin-bottom: 10px; /*  Добавляем отступ снизу */
+}
+
+#description-text {
+    margin-top: 40px;
 }
