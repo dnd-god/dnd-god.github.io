@@ -121,11 +121,16 @@ function displaySpellLevel(level, spells) {
 // Функция для отображения описания при наведении
 function showDescription(item) {
     descriptionTitle.textContent = item.name;
+    descriptionTitle.classList.add("centered-title");
     descriptionText.textContent = item.description;
 
     if (currentData === spellsData) {
         levelDangerLabel.textContent = "Уровень:";
         levelDangerValue.textContent = item.level;
+        const levelSpan = document.createElement("span");
+        levelSpan.textContent = "Уровень: " + item.level;
+        levelSpan.classList.add("level-span");
+        descriptionTitle.insertBefore(levelSpan, descriptionTitle.firstChild);
     } else if (currentData === bestiaryData) {
         levelDangerLabel.textContent = "Опасность:";
         levelDangerValue.textContent = item.danger;
@@ -133,6 +138,7 @@ function showDescription(item) {
         levelDangerLabel.textContent = "";
         levelDangerValue.textContent = "";
     }
+    descriptionText.textContent = item.description;
 }
 
 // Функция для открытия модального окна
