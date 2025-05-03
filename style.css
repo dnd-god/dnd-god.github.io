@@ -316,7 +316,7 @@ main {
 [data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 100%;
+    top: 100%; /* Изменено с bottom: 100% */
     left: 50%;
     transform: translateX(-50%);
     background-color: #34495e;
