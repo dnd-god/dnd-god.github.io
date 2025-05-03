@@ -191,14 +191,12 @@ main {
 }
 
 .level-span {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background-color: #f1c40f; /*  Желтый цвет */
-    color: #2c3e50; /* Темный цвет текста для контраста */
+    background-color: #f1c40f;
+    color: #2c3e50;
     padding: 2px 5px;
-    border-radius: 3px; /*  Скругленные углы */
-    font-size: 0.8em; /*  Меньший размер шрифта */
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-right: 0; /* Убираем отступ, так как теперь есть gap у контейнера */
 }
 
 .title-container {
@@ -268,4 +266,34 @@ main {
     background-color: rgba(52, 152, 219, 0.1);
     border-radius: 3px;
     display: none; /* По умолчанию скрыто */
+}
+
+/* Стили для контейнера индикаторов */
+.indicators-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Общие стили для индикаторов */
+.concentration-indicator,
+.ritual-indicator {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Специфические стили для каждого индикатора */
+.concentration-indicator {
+    background-color: rgba(64, 224, 208, 0.2);  /* Бирюзовый фон */
+    border: 1px solid #40e0d0;                  /* Бирюзовая рамка */
+    color: #e0ffff;                             /* Светло-бирюзовый текст */
+}
+
+.ritual-indicator {
+    background-color: rgba(147, 112, 219, 0.2); /* Фиолетовый фон */
+    border: 1px solid #9370db;                   /* Фиолетовая рамка */
+    color: #e6e6fa;                             /* Лавандовый текст */
 }
