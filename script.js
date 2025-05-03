@@ -217,13 +217,13 @@ function getSchoolImage(school) {
 }
 
 function formatComponents(components) {
-    // Получаем реальные компоненты из данных заклинания
-    const realComponents = components.split(", ").map(c => c.trim().toUpperCase());
+    // Разбиваем строку компонентов на массив и приводим к верхнему регистру
+    const activeComponents = components.toUpperCase().split(/,\s*/);
     
     // Проверяем каждый возможный компонент
-    const v = realComponents.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
-    const s = realComponents.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
-    const m = realComponents.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
+    const v = activeComponents.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
+    const s = activeComponents.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
+    const m = activeComponents.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
     
     return `${v}${s}${m}`;
 }
