@@ -135,6 +135,7 @@ function showDescription(item) {
         const concSpan = document.createElement("span");
         concSpan.textContent = "●";
         concSpan.classList.add("concentration-indicator");
+        concSpan.setAttribute("data-tooltip", "Концентрация"); // Добавляем текст подсказки
         indicatorsContainer.appendChild(concSpan);
     }
 
@@ -143,9 +144,9 @@ function showDescription(item) {
         const ritualSpan = document.createElement("span");
         ritualSpan.textContent = "⛧";
         ritualSpan.classList.add("ritual-indicator");
+        ritualSpan.setAttribute("data-tooltip", "Ритуал"); // Добавляем текст подсказки
         indicatorsContainer.appendChild(ritualSpan);
     }
-
     titleContainer.appendChild(indicatorsContainer);
 
     descriptionTitle.textContent = item.name;
