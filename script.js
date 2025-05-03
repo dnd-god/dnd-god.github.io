@@ -5,7 +5,7 @@ const spellsData = [
     { id: 4, name: "Щит", description: "Описание щита", image: "img/spells/Arrow_of_Ice_Faded.png", level: "1", school: "Ограждение", components: "В, С" },
     { id: 5, name: "Луч холода", description: "Описание луча холода", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0", school: "Воплощение", components: "В, С" },
     { id: 6, name: "Магическая рука", description: "Описание магической руки", image: "img/spells/Arrow_of_Ice_Faded.png", level: "0", school: "Преобразование", components: "В, С" },
-    { id: 7, name: "Невидимость", description: "Описание невидимости", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2", school: "Иллюзия", components: "В, С, М (ресница, покрытая смолой)" },
+    { id: 7, name: "Невидимость", description: "Описание невидимости", image: "img/spells/Arrow_of_Ice_Faded.png", level: "2", school: "Иллюзия", components: "В, С, М (ресница, покрытая смолой)", concentration: true, ritual: false },
     { id: 8, name: "Иллюзорный двойник", description: "Описание иллюзорного двойника", image: "img/spells/Arrow_of_Ice_Faded.png", level: "3", school: "Иллюзия", components: "В, С, М (немного шерсти)" },
     { id: 9, name: "Гроза", description: "Описание грозы", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4", school: "Воплощение", components: "В, С, М (капля воды)" },
     { id: 10, name: "Стена огня", description: "Описание стены огня", image: "img/spells/Arrow_of_Ice_Faded.png", level: "4", school: "Воплощение", components: "В, С, М (красный камень)" },
