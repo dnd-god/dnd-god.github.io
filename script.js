@@ -191,12 +191,17 @@ function formatComponents(components) {
 }
 // Функция для открытия модального окна
 function openModal(item) {
-    modalTitle.textContent = item.name;
+    const levelBadge = `<span class="level-span">Уровень ${item.level}</span>`;
+    modalTitle.innerHTML = `
+        <div style="text-align: center">
+            <h2>${item.name}</h2>
+            ${levelBadge}
+        </div>
+    `;
 
     let modalText = `
     <div class="spell-details">
         <div class="spell-meta">
-            <p><strong>Уровень:</strong> ${item.level}</p>
             <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
             <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
         </div>
@@ -209,7 +214,7 @@ function openModal(item) {
         </div>
 
         <div class="spell-description">
-            <p>${item.description}</p>
+            ${item.description}
         </div>`;
 
     // Добавляем блок "На больших уровнях", если он есть
