@@ -53,6 +53,7 @@ main {
     width: 100%;
     max-width: none;
     min-height: 0;
+    align-items: flex-start;
 }
 
 .description {
@@ -87,6 +88,8 @@ main {
     gap: 5px;
     position: relative;
     align-items: start; /* Фиксируем позиционирование */
+    margin-top: 0; /* Убираем внешний отступ сверху */
+    padding-top: 0; /* Убираем внутренний отступ */
 }
 
 .list img {
@@ -147,6 +150,7 @@ main {
     text-align: center;
     width: 100%; /* Занимает всю ширину контейнера */
     margin-bottom: 10px; /* Добавляем отступ снизу */
+    margin-top: 0;
 }
 
 .spell-details {
