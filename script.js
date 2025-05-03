@@ -183,15 +183,41 @@ function formatComponents(components) {
 function openModal(item) {
     modalTitle.textContent = item.name;
 
-    // Создаем текст для модального окна
     let modalText = `<div class="spell-details">
-                         <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
-                         <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
-                         <p class="spell-description">${item.description}</p>
-                     </div>`;
+        <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
+        <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
+        <p class="spell-description">${item.description}</p>`;
 
-    modalDescription.innerHTML = modalText; // Используем innerHTML для вставки HTML-кода
+    // Добавляем блок "На больших уровнях", если он есть
+    if (item.higherLevels) {
+        modalText += `
+        <div class="higher-levels">
+            <div class="higher-levels-header">На больших уровнях ▼</div>
+            <div class="higher-levels-content">${item.higherLevels}</div>
+        </div>`;
+    }
+
+    modalText += `</div>`;
+    modalDescription.innerHTML = modalText;
     modal.style.display = "block";
+
+    // Добавляем обработчик клика для разворачивания блока
+    if (item.higherLevels) {
+        const header = document.querySelector('.higher-levels-header');
+        const content = document.querySelector('.higher-levels-content');
+        
+        content.style.display = 'none'; // Сначала скрываем содержимое
+        
+        header.addEventListener('click', () => {
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                header.innerHTML = 'На больших уровнях ▲';
+            } else {
+                content.style.display = 'none';
+                header.innerHTML = 'На больших уровнях ▼';
+            }
+        });
+    }
 }
 
 // Функция для закрытия модального окна
