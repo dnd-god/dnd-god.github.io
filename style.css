@@ -369,6 +369,22 @@ main {
     line-height: 1.5;
 }
 
+.spell-description p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.spell-description p:last-child {
+    margin-bottom: 0;
+}
+
+.spell-description .note {
+    font-style: italic;
+    color: #f1c40f;
+    padding-left: 10px;
+    border-left: 2px solid #f1c40f;
+}
+
 /* Адаптация для мобильных */
 @media (max-width: 600px) {
     .spell-stats {
