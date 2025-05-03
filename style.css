@@ -219,7 +219,7 @@ main {
 }
 
 .school-symbol {
-    width: 50px; /*  Задаем ширину */
+    width: 30px; /*  Задаем ширину */
     height: 30px; /*  Задаем высоту */
     cursor: help; /* Изменяем курсор на вопросительный знак */
     margin-right: 5px;
