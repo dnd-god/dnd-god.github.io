@@ -240,3 +240,11 @@ main {
     color: #666; /* Серый цвет для неактивных компонентов */
     text-decoration: line-through; /* Перечеркиваем неактивные компоненты */
 }
+
+.hint-text {
+    color: #f1c40f; /* Желтый цвет */
+    font-size: 0.8em;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
