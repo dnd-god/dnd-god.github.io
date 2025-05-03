@@ -174,12 +174,12 @@ function getSchoolImage(school) {
 
 function formatComponents(components) {
     let formatted = "";
-    formatted += components.includes("В") ? "В" : "В";
-    formatted += components.includes("С") ? "С" : "С";
-    formatted += components.includes("М") ? "М" : "М";
+    // Проверяем каждый компонент и добавляем его, если он есть в строке компонентов
+    formatted += components.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
+    formatted += components.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
+    formatted += components.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
     return formatted;
 }
-
 // Функция для открытия модального окна
 function openModal(item) {
     modalTitle.textContent = item.name;
