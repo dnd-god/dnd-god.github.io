@@ -189,6 +189,13 @@ function showDescription(item) {
     hint.classList.add("hint-text");
     hint.innerHTML = "Нажмите на заклинание чтобы увидеть подробное описание";
     aside.appendChild(hint);
+    const descriptionEl = document.getElementById("description-text");
+    descriptionEl.style.fontSize = "14px";
+    while (descriptionEl.scrollHeight > descriptionEl.clientHeight && 
+           parseInt(descriptionEl.style.fontSize) > 10) {
+        const newSize = parseInt(descriptionEl.style.fontSize) - 1;
+        descriptionEl.style.fontSize = `${newSize}px`;
+    }
 }
 
 function getSchoolImage(school) {
