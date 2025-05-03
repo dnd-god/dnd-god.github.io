@@ -119,6 +119,8 @@ function displaySpellLevel(level, spells) {
 
 // Функция для отображения описания при наведении
 function showDescription(item) {
+    const descriptionContainer = document.querySelector(".description");
+    descriptionContainer.style.height = "250px";
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title-container");
 
@@ -151,6 +153,7 @@ function showDescription(item) {
     descriptionTitle.textContent = item.name;
     descriptionTitle.classList.add("centered-title");
     titleContainer.appendChild(descriptionTitle);
+    
 
     // Добавляем контейнер для иконок и компонентов
     const spellInfoContainer = document.createElement("div");
@@ -178,6 +181,7 @@ function showDescription(item) {
     aside.appendChild(titleContainer);
 
     descriptionText.innerHTML = item.description;
+    descriptionContainer.scrollTop = 0;
     aside.appendChild(descriptionText);
 
     // Добавляем подпись внизу описания
