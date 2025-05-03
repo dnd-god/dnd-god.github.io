@@ -194,10 +194,24 @@ function formatComponents(components) {
 function openModal(item) {
     modalTitle.textContent = item.name;
 
-    let modalText = `<div class="spell-details">
-        <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
-        <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
-        <p class="spell-description">${item.description}</p>`;
+    let modalText = `
+    <div class="spell-details">
+        <div class="spell-meta">
+            <p><strong>Уровень:</strong> ${item.level}</p>
+            <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
+            <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
+        </div>
+
+        <div class="spell-stats">
+            <p><strong>Время накладывания:</strong> ${item.castingTime}</p>
+            <p><strong>Дистанция:</strong> ${item.range}</p>
+            <p><strong>Длительность:</strong> ${item.duration} ${item.concentration ? ' (Концентрация)' : ''}</p>
+            <p><strong>Классы:</strong> ${item.classes}</p>
+        </div>
+
+        <div class="spell-description">
+            <p>${item.description}</p>
+        </div>`;
 
     // Добавляем блок "На больших уровнях", если он есть
     if (item.higherLevels) {
