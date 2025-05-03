@@ -167,13 +167,13 @@ function showDescription(item) {
     aside.innerHTML = "";
     aside.appendChild(titleContainer);
 
-    descriptionText.textContent = item.description;
+    descriptionText.innerHTML = item.description;
     aside.appendChild(descriptionText);
 
     // Добавляем подпись внизу описания
     const hint = document.createElement("div");
     hint.classList.add("hint-text");
-    hint.textContent = "Нажмите на заклинание чтобы увидеть подробное описание";
+    hint.innerHTML = "Нажмите на заклинание чтобы увидеть подробное описание";
     aside.appendChild(hint);
 }
 
