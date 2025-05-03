@@ -139,16 +139,16 @@ function showDescription(item) {
     // Символ школы (изображение)
     const schoolImage = document.createElement("img");
     schoolImage.classList.add("school-symbol");
-    schoolImage.src = getSchoolImage(item.school); // Функция для получения пути к изображению
-    schoolImage.alt = item.school; // Альтернативный текст для изображения
-    schoolImage.title = item.school; // Всплывающая подсказка
+    schoolImage.src = getSchoolImage(item.school);
+    schoolImage.alt = item.school;
+    schoolImage.title = item.school;
     spellInfoContainer.appendChild(schoolImage);
 
     // Компоненты
-    const components = item.components.toUpperCase(); // Преобразуем в верхний регистр
+    const components = item.components.toUpperCase();
     const componentsSpan = document.createElement("span");
     componentsSpan.classList.add("components");
-    componentsSpan.innerHTML = formatComponents(components); // Функция для форматирования компонентов
+    componentsSpan.innerHTML = formatComponents(components);
     spellInfoContainer.appendChild(componentsSpan);
 
     titleContainer.appendChild(spellInfoContainer);
@@ -157,15 +157,14 @@ function showDescription(item) {
     aside.innerHTML = "";
     aside.appendChild(titleContainer);
 
-    if (currentData === spellsData) {
-        // ...
-    } else if (currentData === bestiaryData) {
-        // ...
-    } else {
-        // ...
-    }
     descriptionText.textContent = item.description;
     aside.appendChild(descriptionText);
+
+    // Добавляем подпись внизу описания
+    const hint = document.createElement("div");
+    hint.classList.add("hint-text");
+    hint.textContent = "Нажмите на заклинание чтобы увидеть подробное описание";
+    aside.appendChild(hint);
 }
 
 function getSchoolImage(school) {
