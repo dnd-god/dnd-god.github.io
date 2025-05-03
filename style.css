@@ -394,9 +394,36 @@ main {
     opacity: 0.5;
 }
 
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-spell-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border: 2px solid #f1c40f;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-header > div {
+    flex-grow: 1;
+    text-align: center;
+}
+
 /* Адаптация для мобильных */
 @media (max-width: 600px) {
-    .spell-stats {
-        grid-template-columns: 1fr;
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .modal-spell-icon {
+        margin-bottom: 10px;
     }
 }
