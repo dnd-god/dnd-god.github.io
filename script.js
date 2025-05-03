@@ -192,6 +192,7 @@ function formatComponents(components) {
 // Функция для открытия модального окна
 function openModal(item) {
     const levelBadge = `<span class="level-span">Уровень ${item.level}</span>`;
+    
     modalTitle.innerHTML = `
         <div style="text-align: center">
             <h2>${item.name}</h2>
@@ -201,22 +202,23 @@ function openModal(item) {
 
     let modalText = `
     <div class="spell-details">
-        <div class="spell-meta">
-            <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
-            <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
-        </div>
-
         <div class="spell-stats">
             <p><strong>Время накладывания:</strong> ${item.castingTime}</p>
             <p><strong>Дистанция:</strong> ${item.range}</p>
             <p><strong>Длительность:</strong> ${item.duration} ${item.concentration ? ' (Концентрация)' : ''}</p>
-            <p><strong>Классы:</strong> ${item.classes}</p>
+            <p><strong>Компоненты:</strong> <span class="spell-components">${item.components}</span></p>
         </div>
 
         <div class="spell-description">
             ${item.description}
-        </div>`;
+        </div>
 
+        <div class="spell-divider"></div>
+
+        <div class="spell-meta">
+            <p><strong>Школа:</strong> <span class="spell-school">${item.school}</span></p>
+            <p><strong>Классы:</strong> ${item.classes}</p>
+        </div>`;
     // Добавляем блок "На больших уровнях", если он есть
     if (item.higherLevels) {
         modalText += `
