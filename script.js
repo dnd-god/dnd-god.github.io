@@ -123,10 +123,30 @@ function showDescription(item) {
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title-container");
 
+    const indicatorsContainer = document.createElement("div");
+    indicatorsContainer.classList.add("indicators-container");
+
     const levelSpan = document.createElement("span");
-    levelSpan.textContent = "Уровень: " + item.level;
+    levelSpan.textContent = `Уровень: ${item.level}`;
     levelSpan.classList.add("level-span");
-    titleContainer.appendChild(levelSpan);
+    indicatorsContainer.appendChild(levelSpan);
+
+    if (item.concentration) {
+        const concSpan = document.createElement("span");
+        concSpan.textContent = "●";
+        concSpan.classList.add("concentration-indicator");
+        indicatorsContainer.appendChild(concSpan);
+    }
+
+    // Индикатор ритуала (если есть)
+    if (item.ritual) {
+        const ritualSpan = document.createElement("span");
+        ritualSpan.textContent = "⛧";
+        ritualSpan.classList.add("ritual-indicator");
+        indicatorsContainer.appendChild(ritualSpan);
+    }
+
+    titleContainer.appendChild(indicatorsContainer);
 
     descriptionTitle.textContent = item.name;
     descriptionTitle.classList.add("centered-title");
