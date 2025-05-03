@@ -209,13 +209,6 @@ main {
 
 #description-text {
     margin-top: 20px;
-    line-height: 1.4;
-    font-size: calc(14px + 0.1vw); /* Адаптивный размер текста */
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 10; /* Лимит строк */
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
 }
 
 .spell-info-icons {
