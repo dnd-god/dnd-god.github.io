@@ -194,9 +194,12 @@ function openModal(item) {
     const levelBadge = `<span class="level-span">Уровень ${item.level}</span>`;
     
     modalTitle.innerHTML = `
-        <div style="text-align: center">
-            <h2>${item.name}</h2>
-            ${levelBadge}
+        <div class="modal-header">
+            <img src="${item.image}" alt="${item.name}" class="modal-spell-icon">
+            <div>
+                <h2>${item.name}</h2>
+                ${levelBadge}
+            </div>
         </div>
     `;
 
