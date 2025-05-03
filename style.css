@@ -297,3 +297,42 @@ main {
     border: 1px solid #9370db;                   /* Фиолетовая рамка */
     color: #e6e6fa;                             /* Лавандовый текст */
 }
+
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #34495e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Дополнительные стили для конкретных индикаторов */
+.concentration-indicator::after {
+    background-color: #40e0d0; /* Бирюзовый как у рамки */
+}
+
+.ritual-indicator::after {
+    background-color: #9370db; /* Фиолетовый как у рамки */
+}
