@@ -219,8 +219,8 @@ main {
 }
 
 .school-symbol {
-    width: 25px; /*  Задаем ширину */
-    height: 25px; /*  Задаем высоту */
+    width: 30px; /*  Задаем ширину */
+    height: 30px; /*  Задаем высоту */
     cursor: help; /* Изменяем курсор на вопросительный знак */
     margin-right: 5px;
     display: inline-block; /*  Чтобы работал margin */
