@@ -336,3 +336,42 @@ main {
 .ritual-indicator::after {
     background-color: #9370db; /* Фиолетовый как у рамки */
 }
+
+.spell-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.spell-meta p {
+    margin: 0;
+}
+
+/* Стили для характеристик */
+.spell-stats {
+    background-color: rgba(52, 73, 94, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.spell-stats p {
+    margin: 0;
+}
+
+/* Стили для описания */
+.spell-description {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+    .spell-stats {
+        grid-template-columns: 1fr;
+    }
+}
