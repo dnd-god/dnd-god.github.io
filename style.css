@@ -338,6 +338,8 @@ main {
 }
 
 .spell-meta {
+    margin-top: 10px;
+    font-size: 0.95em;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -345,13 +347,13 @@ main {
 }
 
 .spell-meta p {
-    margin: 0;
+    margin: 5px 0;
 }
 
 /* Стили для характеристик */
 .spell-stats {
     background-color: rgba(52, 73, 94, 0.3);
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     margin: 10px 0;
     display: grid;
@@ -383,6 +385,13 @@ main {
     color: #f1c40f;
     padding-left: 10px;
     border-left: 2px solid #f1c40f;
+}
+
+.spell-divider {
+    height: 1px;
+    background-color: #34495e;
+    margin: 15px 0;
+    opacity: 0.5;
 }
 
 /* Адаптация для мобильных */
