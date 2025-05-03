@@ -217,13 +217,15 @@ function getSchoolImage(school) {
 }
 
 function formatComponents(components) {
-    // Разбиваем строку компонентов на массив и приводим к верхнему регистру
-    const activeComponents = components.toUpperCase().split(/,\s*/);
+    // Извлекаем только первые буквы компонентов (В, С, М), игнорируя описания в скобках
+    const componentLetters = components.split(',')
+        .map(c => c.trim().toUpperCase().charAt(0))
+        .filter(c => ['В', 'С', 'М'].includes(c));
     
-    // Проверяем каждый возможный компонент
-    const v = activeComponents.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
-    const s = activeComponents.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
-    const m = activeComponents.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
+    // Проверяем каждый компонент
+    const v = componentLetters.includes('В') ? '<strong>В</strong>' : '<span class="inactive-component">В</span>';
+    const s = componentLetters.includes('С') ? '<strong>С</strong>' : '<span class="inactive-component">С</span>';
+    const m = componentLetters.includes('М') ? '<strong>М</strong>' : '<span class="inactive-component">М</span>';
     
     return `${v}${s}${m}`;
 }
