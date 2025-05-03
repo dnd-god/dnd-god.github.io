@@ -217,12 +217,15 @@ function getSchoolImage(school) {
 }
 
 function formatComponents(components) {
-    let formatted = "";
-    // Проверяем каждый компонент и добавляем его, если он есть в строке компонентов
-    formatted += components.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
-    formatted += components.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
-    formatted += components.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
-    return formatted;
+    // Получаем реальные компоненты из данных заклинания
+    const realComponents = components.split(", ").map(c => c.trim().toUpperCase());
+    
+    // Проверяем каждый возможный компонент
+    const v = realComponents.includes("В") ? "<strong>В</strong>" : "<span class='inactive-component'>В</span>";
+    const s = realComponents.includes("С") ? "<strong>С</strong>" : "<span class='inactive-component'>С</span>";
+    const m = realComponents.includes("М") ? "<strong>М</strong>" : "<span class='inactive-component'>М</span>";
+    
+    return `${v}${s}${m}`;
 }
 // Функция для открытия модального окна
 function openModal(item) {
