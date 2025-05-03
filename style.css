@@ -232,5 +232,11 @@ main {
 }
 
 .components strong {
-    color: white; /* Выделяем активные компоненты */
+    color: white; /* Белый цвет для активных компонентов */
+    text-decoration: none; /* Убираем перечеркивание */
+}
+
+.inactive-component {
+    color: #666; /* Серый цвет для неактивных компонентов */
+    text-decoration: line-through; /* Перечеркиваем неактивные компоненты */
 }
